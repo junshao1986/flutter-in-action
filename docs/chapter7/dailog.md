@@ -73,7 +73,7 @@ RaisedButton(
   child: Text("对话框1"),
   onPressed: () async {
     //弹出对话框并等待其关闭
-    bool delete = await showDeleteConfirmDialog1();
+    bool delete = await showDeleteConfirmDialog1(context);
     if (delete == null) {
       print("取消删除");
     } else {
@@ -84,7 +84,7 @@ RaisedButton(
 ),
 
 // 弹出对话框
-Future<bool> showDeleteConfirmDialog1() {
+Future<bool> showDeleteConfirmDialog1(BuildContext context) {
   return showDialog<bool>(
     context: context,
     builder: (context) {
